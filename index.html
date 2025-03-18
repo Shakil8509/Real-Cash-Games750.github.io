@@ -1,0 +1,239 @@
+<html><head><base href="https://cashappclone.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cash App - Get $750 with Cash App! Sign Up Now!</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  .container {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
+    z-index: 2;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  .amount {
+    font-size: 5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorChange 5s infinite linear;
+  }
+  @keyframes colorChange {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+  .baton {
+    width: 80%;
+    max-width: 300px;
+    height: 60px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .baton:hover {
+    transform: scale(1.05);
+  }
+  .baton-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    white-space: nowrap;
+  }
+  .baton-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+  }
+  @keyframes shine {
+    0% { transform: rotate(45deg) translateY(0); }
+    100% { transform: rotate(45deg) translateY(100%); }
+  }
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #f0f;
+    animation: confetti-fall 4s ease-out infinite;
+    z-index: 3;
+  }
+  @keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+    .amount {
+      font-size: 3.5rem;
+    }
+    .baton {
+      height: 50px;
+    }
+    .baton-text {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    .amount {
+      font-size: 2.5rem;
+    }
+    .baton {
+      height: 40px;
+    }
+    .baton-text {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="container">
+  <h1>Cash App  - Get <span class="amount">$750</span> with your Cash </h1>
+  <a href="https://nx2bs.com/c?o=292&a=8447" class="baton" id="signUpBaton">
+    <div class="baton-text">SIGN UP NOW!</div>
+    <div class="baton-shine"></div>
+  </a>
+</div>
+
+<script>
+const signUpBaton = document.getElementById('signUpBaton');
+const container = document.querySelector('.container');
+
+signUpBaton.addEventListener('click', (e) => {
+  e.preventDefault(); // Prevent default link behavior
+  createConfetti();
+  setTimeout(() => {
+    window.location.href = "https://www.youtube.com/@tsohor";
+  }, 1000); // Delay redirect to allow confetti animation
+});
+
+function createConfetti() {
+  for (let i = 0; i < 50; i++) {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.animationDelay = Math.random() * 3 + 's';
+    confetti.style.backgroundColor = getRandomColor();
+    document.body.appendChild(confetti);
+
+    // Remove confetti after animation
+    setTimeout(() => {
+      confetti.remove();
+    }, 4000);
+  }
+}
+
+function getRandomColor() {
+  const colors = ['#ff00ff', '#00ffff', '#ffff00', '#ff0000', '#00ff00', '#0000ff'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+// Add a subtle floating animation to the baton
+let floatY = 0;
+let floatDirection = 1;
+
+function animateBaton() {
+  floatY += 0.05 * floatDirection;
+  if (floatY > 5 || floatY < -5) {
+    floatDirection *= -1;
+  }
+  signUpBaton.style.transform = `translateY(${floatY}px)`;
+  requestAnimationFrame(animateBaton);
+}
+
+animateBaton();
+
+// Function to adjust layout based on screen size
+function adjustLayout() {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  const container = document.querySelector('.container');
+  const h1 = document.querySelector('h1');
+  const amount = document.querySelector('.amount');
+  const baton = document.querySelector('.baton');
+
+  if (windowWidth <= 480) {
+    // Mobile layout
+    h1.style.fontSize = '1.5rem';
+    amount.style.fontSize = '2.5rem';
+    baton.style.height = '40px';
+  } else if (windowWidth <= 768) {
+    // Tablet layout
+    h1.style.fontSize = '2rem';
+    amount.style.fontSize = '3.5rem';
+    baton.style.height = '50px';
+  } else {
+    // Desktop layout
+    h1.style.fontSize = '3rem';
+    amount.style.fontSize = '5rem';
+    baton.style.height = '60px';
+  }
+
+  // Adjust container padding based on height
+  const containerPadding = Math.max(20, windowHeight * 0.05);
+  container.style.padding = `${containerPadding}px`;
+}
+
+// Call adjustLayout on page load and window resize
+window.addEventListener('load', adjustLayout);
+window.addEventListener('resize', adjustLayout);
+</script>
+</body></html>
